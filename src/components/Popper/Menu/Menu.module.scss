@@ -10,10 +10,14 @@
     padding-bottom: 8px;
 }
 
+.menu-body {
+    overflow-y: auto;
+}
+
 .menu-item {
     justify-content: flex-start;
     width: 100%;
-    padding: 8px 16px;
+    padding: 9px 16px;
     border-radius: 0;
     font-weight: 600;
     line-height: 1.8rem;
@@ -27,6 +31,7 @@
 }
 
 .header {
+    flex-shrink: 0;
     position: relative;
     height: 50px;
     margin-top: -8px;

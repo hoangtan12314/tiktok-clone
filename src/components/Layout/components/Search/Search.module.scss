@@ -13,11 +13,11 @@
     
     input {
         flex: 1;
-        padding-top: 1px;
         height: 100%;
         color: var(--black);
         background-color: transparent;
         font-size: 1.6rem;
+        font-family: var(--font-family);
         caret-color: var(--primary);
     }
 
@@ -89,4 +89,6 @@
     &:active {
         background: rgba(22, 24, 35, .06);
     }
+
+    
 }
