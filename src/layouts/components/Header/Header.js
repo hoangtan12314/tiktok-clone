@@ -2,13 +2,7 @@ import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faGlobe,
-    faEllipsisVertical,
-    faCoins,
-    faGear,
-    faRightToBracket,
-} from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faEllipsisVertical, faCoins, faGear, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion, faKeyboard, faUser } from '@fortawesome/free-regular-svg-icons';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
@@ -19,8 +13,8 @@ import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import { MessageIcon, UploadIcon, InboxIcon } from '~/components/Icons';
 import Image from '~/components/Images';
-import Search from '~/components/Layout/components/Search';
-import routesConfig from '~/config/routes';
+import Search from '~/layouts/components/Search';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -40,7 +34,7 @@ const MENU_ITEMS = [
                     type: 'language',
                     code: 'vi',
                     title: 'Tiếng Việt',
-                }
+                },
             ],
         },
     },
@@ -90,7 +84,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}><img src={images.logo} alt="TikTok" /></Link>
+                <Link to={config.routes.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="TikTok" />
+                </Link>
                 <Search />
 
                 <div className={cx('action')}>
@@ -123,7 +119,7 @@ function Header() {
                         </Fragment>
                     )}
 
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange} hideOnClick={false} >
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange} hideOnClick={false}>
                         {currentUser ? (
                             <Image
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/dd08abf88f42e3f77d5df9f2b1a09a83~c5_100x100.jpeg?x-expires=1675155600&x-signature=gfPWvhorrAB0NV8O9ov4e2lU7SU%3D"
